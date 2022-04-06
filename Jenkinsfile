@@ -1,12 +1,12 @@
 node {
     stage('clone') {
-git 'git \'https://github.com/cedricleandres/jenkins-helloworld/\''
+    git credentialsId: 'e0c10a1f-f0fb-4e26-bdbb-01425f73c104', url: 'https://github.com/cedricleandres/jenkins-helloworld'
         
     }
     stage('Build') {
-    sh 'javac Main.java'   
+    bat 'javac Main.java'   
     }
     stage('Run') {
-    sh 'java Main'   
+    bat 'java Main'   
     }
 }
